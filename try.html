@@ -38,6 +38,7 @@ a { color: inherit; }
   align-items: center;
   text-align: justify;
   padding: 5%;
+  overflow: hidden;
 }
 
 .slide img {
@@ -53,7 +54,7 @@ a { color: inherit; }
   text-align: center;
 }
 
-.slide-with-image .image {
+.slide-with-image .image, .slide-with-image .mermaid {
   flex-grow: 1;
   width: 100%;
   background-size: contain;
@@ -77,7 +78,9 @@ div.mermaid svg {
   <body>
     <div class="presentation">
       <div class="slide">
-        <div class="mermaid" id="flow-chart-1">
+        <div class="slide-with-image">
+          <p>hello</p>
+          <div class="mermaid" id="flow-chart-1">
 graph LR
 	A[Christmas] -->|Get money| B(Go shopping)
 	B --> C{Let me think}
@@ -87,6 +90,7 @@ graph LR
   F --> G[Nice]
   G --> H[Nicer]
   H --> I[Nicest]
+          </div>
         </div>
       </div>
       <div class="slide">
