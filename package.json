@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "ava --verbose",
+    "update-bullshit-terms": "curl https://raw.githubusercontent.com/mourner/bullshit.js/master/src/terms.js > src/bullshit/terms.ts"
   },
   "keywords": [],
   "author": "",
@@ -12,10 +13,19 @@
   "devDependencies": {
     "@types/marked": "^0.7.2",
     "@types/node": "^13.5.3",
+    "ava": "^3.2.0",
     "ts-node": "^8.6.2",
     "typescript": "^3.7.5"
   },
   "dependencies": {
     "marked": "^0.8.0"
+  },
+  "ava": {
+    "extensions": [
+      "ts"
+    ],
+    "require": [
+      "ts-node/register"
+    ]
   }
 }
