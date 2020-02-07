@@ -23,6 +23,8 @@ body {
   color: white
 }
 
+a { color: inherit; }
+
 .presentation {
   scroll-snap-type: mandatory;
   scroll-snap-points-y: repeat(100vh);
@@ -43,10 +45,67 @@ body {
   max-height: 100vh;
 }
 
+.slide-with-image {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  text-align: center;
+}
+
+.slide-with-image .image {
+  flex-grow: 1;
+  width: 100%;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+div.mermaid {
+  font-family: inherit;
+  font-size: 0.6em;
+  padding: 1em;
+}
+
+div.mermaid svg {
+  max-width: 90vw;
+  max-height: 90vh;
+}
+
     </style>
   </head>
   <body>
     <div class="presentation">
+      <div class="slide">
+        <div class="mermaid" id="flow-chart-1">
+graph LR
+	A[Christmas] -->|Get money| B(Go shopping)
+	B --> C{Let me think}
+	C -->|One| D[Laptop]
+	C -->|Two| E[iPhone]
+	C -->|Three| F[fa:fa-car Car]
+  F --> G[Nice]
+  G --> H[Nicer]
+  H --> I[Nicest]
+        </div>
+      </div>
+      <div class="slide">
+        <div class="mermaid">
+sequenceDiagram
+	Alice->>+John: Hello John, how are you?
+	Alice->>+John: John, can you hear me?
+	John-->>-Alice: Hi Alice, I can hear you!
+	John-->>-Alice: I feel great!
+  Note right of John: Who the fuck is this?
+  Alice-->>John: Hello
+  Alice-->>Bob: Say hello
+  Bob->>John: Hello
+  Bob->>Alice: Happy?
+  Alice-->>Bob: Asshole...
+  Alice-->>John: Bob is a dickhead
+  Alice-->>John: Hello
+        </div>
+      </div>
       <div class="slide">
         <div>
           <h1>Hello</h1>
@@ -55,7 +114,7 @@ body {
       <div class="slide">
         <div>
           <h2>A title - can be rather loooong</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          <p><a href="https://idris-maps.com">Lorem ipsum</a> dolor sit amet, <b>consectetur adipiscing elit</b>, sed do eiusmod tempor <i>incididunt</i> ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
         </div>
       </div>
       <div class="slide">
@@ -69,13 +128,14 @@ body {
         </div>
       </div>
       <div class="slide">
-        <div>
-          <img src="https://images.unsplash.com/photo-1499084732479-de2c02d45fcc" />
+        <div class="slide-with-image">
+          <div class="image" style="background-image: url(https://images.unsplash.com/photo-1499084732479-de2c02d45fcc)"></div>
         </div>
       </div>
       <div class="slide">
-        <div>
-          <img src="https://images.unsplash.com/photo-1495344517868-8ebaf0a2044a" />
+        <div class="slide-with-image">
+          <h2>A title</h2>
+          <div class="image" style="background-image: url(https://images.unsplash.com/photo-1495344517868-8ebaf0a2044a)"></div>
         </div>
       </div>
     </div>
@@ -144,6 +204,7 @@ window.addEventListener('keydown', e => {
 })
 
 window.addEventListener('scroll', () => goToIndex(page.get()))
+window.addEventListener('resize', () => goToIndex(page.get()))
 
 const swipe = initSwiper()
 swipe.subscribe(direction => {
@@ -155,7 +216,26 @@ window.addEventListener('mousedown', swipe.onMouseDown)
 window.addEventListener('mouseup', swipe.onMouseUp)
 
 
+    </script>
+    <script src="https://unpkg.com/mermaid@8.4.6/dist/mermaid.min.js"></script>
+    <script>
+const mermaidHack = `
+.node polygon, .node rect, .node circle, .node path, .node ellipse { fill: none; stroke: white; }
+.edgePath .path { stroke: white; }
+.edgePath marker path { fill: white; }
+.edgeLabel { background-color: rgba(25, 25, 25,0.8); color: white; }
+.label { color: white; }
 
+rect.actor { fill: rgb(25, 25, 25); stroke: white; }
+text.actor { fill: white; }
+.actor-line { stroke: darkgray; }
+.messageText { fill: white; }
+#arrowhead, #crosshead, #sequencenumber { fill: darkgray; }
+.messageLine0, .messageLine1 { stroke: darkgray; }
+rect.activation0, rect.activation1 { stroke: darkgray; fill: black; }
+rect.note { fill: darkgray; stroke: gray; }
+`
+mermaid.initialize({startOnLoad:true, theme: 'neutral', themeCSS: mermaidHack })
     </script>
   </body>
 </html>
