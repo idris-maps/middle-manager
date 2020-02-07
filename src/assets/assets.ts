@@ -23,7 +23,9 @@ export interface ImgFilePath {
   path: string
 }
 
-export type Asset = CssFileContent | CssFilePath | JsFileContent | JsFilePath | ImgFilePath
+export type AssetPath = CssFilePath | JsFilePath | ImgFilePath
+
+export type Asset = CssFileContent | JsFileContent | AssetPath
 
 export const isCssContent = (d: any): d is CssFileContent =>
   d && d.type && d.type === 'css' && d.content
@@ -40,9 +42,13 @@ export const isJsPath = (d: any): d is CssFilePath =>
 export const isImgPath = (d: any): d is ImgFilePath =>
   d && d.type && d.type === 'img' && d.path
 
-export const isAsset = (d: any): d is Asset =>
-  isCssContent(d)
-  || isCssPath(d)
-  || isJsContent(d)
+export const isAssetPath = (d: any): d is AssetPath =>
+  isCssPath(d)
   || isJsPath(d)
   || isImgPath(d)
+
+export const isAsset = (d: any): d is Asset =>
+  isCssContent(d)
+  || isJsContent(d)
+  || isImgPath(d)
+  || isAssetPath(d)

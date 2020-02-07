@@ -1,4 +1,4 @@
-import { Slide } from './parseMd'
+import { Slide } from '../parseMd'
 import renderElement from './renderElement'
 
 const hasImage = (slide: Slide) =>

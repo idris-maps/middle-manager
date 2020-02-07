@@ -1,5 +1,5 @@
 import marked from 'marked'
-import { SlideElement } from './parseMd'
+import { SlideElement } from '../parseMd'
 
 const renderImage = (value: string) =>
   `<div class="image" style="background-image: url(${value.split('(')[1].split(')')[0]})" aria-label="${value.split(']')[0].split('[')[1]}"></div>`
