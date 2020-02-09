@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link href="style.css" rel="stylesheet">
+  </head>
+  <body>
+    <div class="presentation">
+      <div class="slide">
+        <div class="slide-with-image">
+          <p>hello</p>
+          <div class="mermaid" id="flow-chart-1">
+graph LR
+	A[Christmas] -->|Get money| B(Go shopping)
+	B --> C{Let me think}
+	C -->|One| D[Laptop]
+	C -->|Two| E[iPhone]
+	C -->|Three| F[fa:fa-car Car]
+  F --> G[Nice]
+  G --> H[Nicer]
+  H --> I[Nicest]
+          </div>
+        </div>
+      </div>
+      <div class="slide">
+        <div class="mermaid">
+sequenceDiagram
+	Alice->>+John: Hello John, how are you?
+	Alice->>+John: John, can you hear me?
+	John-->>-Alice: Hi Alice, I can hear you!
+	John-->>-Alice: I feel great!
+  Note right of John: Who the fuck is this?
+  Alice-->>John: Hello
+  Alice-->>Bob: Say hello
+  Bob->>John: Hello
+  Bob->>Alice: Happy?
+  Alice-->>Bob: Asshole...
+  Alice-->>John: Bob is a dickhead
+  Alice-->>John: Hello
+        </div>
+      </div>
+      <div class="slide">
+        <div>
+          <h1>Hello</h1>
+        </div>
+      </div>
+      <div class="slide">
+        <div>
+          <h2>A title - can be rather loooong</h2>
+          <p><a href="https://idris-maps.com">Lorem ipsum</a> dolor sit amet, <b>consectetur adipiscing elit</b>, sed do eiusmod tempor <i>incididunt</i> ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        </div>
+      </div>
+      <div class="slide">
+        <div>
+          <h2>Another one with a list</h2>
+          <ul>
+            <li>One</li>
+            <li>Two</li>
+            <li>Three</li>
+          </ul>
+        </div>
+      </div>
+      <div class="slide">
+        <div class="slide-with-image">
+          <div class="image" style="background-image: url(https://images.unsplash.com/photo-1499084732479-de2c02d45fcc)"></div>
+        </div>
+      </div>
+      <div class="slide">
+        <div class="slide-with-image">
+          <h2>A title</h2>
+          <div class="image" style="background-image: url(https://images.unsplash.com/photo-1495344517868-8ebaf0a2044a)"></div>
+        </div>
+      </div>
+    </div>
+    <script src="index.ts"></script>
+  </body>
+</html>
