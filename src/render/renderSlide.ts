@@ -1,4 +1,4 @@
-import { Slide } from './parseMd'
+import { Slide } from '../parseMd'
 import renderElement from './renderElement'
 
 const hasImage = (slide: Slide) =>
@@ -11,7 +11,7 @@ export default (slide: Slide) =>
   <div class="slide-with-image">
     ${slide.map(renderElement).join(`\n\t\t`)}
   </div>
-</diV>
+</div>
     `
   : `
 <div class="slide">
