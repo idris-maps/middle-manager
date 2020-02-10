@@ -12,14 +12,15 @@ ${value}
 <div>`
 
 export default ({ type, lang, value }: SlideElement) => {
+
   if (type === 'image') {
     return renderImage(value)
   }
-  if (type === 'code' && ['mmd', 'mermaid'].includes(lang)) {
+  if (type === 'code' && ['mmd', 'mermaid'].includes(lang || '')) {
     return renderMermaid(value)
   }
   if (type === 'code') {
-    return highlight(value, lang)
+    return `<div class="codeblock">${highlight(value, lang || '')}</div>`
   }
   return marked(value)
 }

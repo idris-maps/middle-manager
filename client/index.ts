@@ -15,10 +15,11 @@ const onKeydown = (prev: () => void, next: () => void) =>
 
 const onLoad = () => {
   const slides = Array.from(document.getElementsByClassName('slide'))
-  const { next, prev, goToPage } = initPaging(slides)
+  const { next, prev, goToPage, getPage } = initPaging(slides)
   window.addEventListener('keydown', onKeydown(prev, next))
   const scroll = throttle(100, goToPage)
   window.addEventListener('scroll', () => scroll.onChange(window.pageYOffset / window.innerHeight))
+  window.addEventListener('resize', () => goToPage(getPage()))
 }
 
 window.addEventListener('load', onLoad)

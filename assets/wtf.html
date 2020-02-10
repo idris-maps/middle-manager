@@ -1,0 +1,81 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title></title>
+    <link href="prism.css" rel="stylesheet">
+    <link href="dark.css" rel="stylesheet">
+  </head>
+  <body>
+    <div class="presentation">
+
+<div class="slide">
+  <h1 id="hello">Hello</h1>
+
+</div>
+    
+
+<div class="slide">
+  <div class="slide-with-image">
+    <h2 id="world">World</h2>
+
+		<div class="codeblock"><pre><code class="language-ts"><span class="token keyword">const</span> <span class="token function-variable function">x</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">n<span class="token operator">:</span> <span class="token builtin">number</span></span><span class="token punctuation">)</span> <span class="token operator">=></span> n <span class="token operator">+</span> <span class="token number">1</span></code></pre></div>
+  </div>
+</div>
+    
+
+<div class="slide">
+  <div class="slide-with-image">
+    <p>An image</p>
+
+		<div class="image" style="background-image: url(https://images.unsplash.com/photo-1499084732479-de2c02d45fcc)" aria-label="img"></div>
+  </div>
+</div>
+    
+
+<div class="slide">
+  <div class="slide-with-image">
+    <div class="mermaid">
+graph LR
+  A[Christmas] -->|Get money| B(Go shopping)
+  B --> C{Let me think}
+  C -->|One| D[Laptop]
+  C -->|Two| E[iPhone]
+  C -->|Three| F[fa:fa-car Car]
+  F --> G[Nice]
+  G --> H[Nicer]
+  H --> I[Nicest]
+
+
+
+
+
+    <div>
+  </div>
+</div>
+    
+    </div>
+    <script src="main.js"></script>
+    <script src="https://unpkg.com/mermaid@8.4.6/dist/mermaid.min.js"></script>
+    <script>
+const mermaidHack = `
+.node polygon, .node rect, .node circle, .node path, .node ellipse { fill: none; stroke: white; }
+.edgePath .path { stroke: white; }
+.edgePath marker path { fill: white; }
+.edgeLabel { background-color: rgba(25, 25, 25,0.8); color: white; }
+.label { color: white; }
+
+rect.actor { fill: rgb(25, 25, 25); stroke: white; }
+text.actor { fill: white; }
+.actor-line { stroke: darkgray; }
+.messageText { fill: white; }
+#arrowhead, #crosshead, #sequencenumber { fill: darkgray; }
+.messageLine0, .messageLine1 { stroke: darkgray; }
+rect.activation0, rect.activation1 { stroke: darkgray; fill: black; }
+rect.note { fill: darkgray; stroke: gray; }
+`
+mermaid.initialize({startOnLoad:true, theme: 'neutral', themeCSS: mermaidHack })
+    </script>
+  </body>
+</html>
+

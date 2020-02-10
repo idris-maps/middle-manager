@@ -18,4 +18,4 @@ text.actor { fill: white; }
 rect.activation0, rect.activation1 { stroke: darkgray; fill: black; }
 rect.note { fill: darkgray; stroke: gray; }
 `
-mermaid.initialize({startOnLoad:true, theme: 'neutral', themeCSS })
+mermaid.initialize({ startOnLoad:true, theme: 'neutral', themeCSS })

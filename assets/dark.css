@@ -50,12 +50,19 @@ a { color: inherit; }
   text-align: center;
 }
 
-.slide-with-image .image, .slide-with-image .mermaid {
+.slide-with-image .image, .slide-with-image .mermaid, .slide-with-image .codeblock {
   flex-grow: 1;
   width: 100%;
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center center;
+}
+
+pre {
+  font-size: 0.8em;
+  padding: 1em;
+  text-align: left;
+  background-color: white;
 }
 
 div.mermaid {

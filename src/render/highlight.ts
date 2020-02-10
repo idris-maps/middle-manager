@@ -1,4 +1,5 @@
 import prism from 'prismjs'
+/*
 import 'prismjs/components/prism-abap'
 import 'prismjs/components/prism-abnf'
 import 'prismjs/components/prism-actionscript'
@@ -183,11 +184,15 @@ import 'prismjs/components/prism-tap'
 import 'prismjs/components/prism-tcl'
 import 'prismjs/components/prism-textile'
 import 'prismjs/components/prism-toml'
+*/
 import 'prismjs/components/prism-tsx'
+/*
 import 'prismjs/components/prism-tt2'
 import 'prismjs/components/prism-turtle'
 import 'prismjs/components/prism-twig'
+*/
 import 'prismjs/components/prism-typescript'
+/*
 import 'prismjs/components/prism-vala'
 import 'prismjs/components/prism-vbnet'
 import 'prismjs/components/prism-velocity'
@@ -202,10 +207,11 @@ import 'prismjs/components/prism-xojo'
 import 'prismjs/components/prism-xquery'
 import 'prismjs/components/prism-yaml'
 import 'prismjs/components/prism-zig'
-
+*/
 export default (code: string, lang: string) => {
+  const language = prism.languages[lang] || prism.languages.autoit
   try {
-    return `<pre><code class="language-${lang}">${prism.highlight(code, prism.languages[String(lang)], String(lang))}</code></pre>`
+    return `<pre><code class="language-${lang}">${prism.highlight(code, language, lang)}</code></pre>`
   } catch (e) {
     console.log(`Could not highlight code block with language: ${lang}`, e)
     return `<pre><code>${code}</code></pre>`

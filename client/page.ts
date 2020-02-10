@@ -15,7 +15,8 @@ export const initPaging = (slides: Element[]) => {
     goToPage: (newPage: number) => {
       page = newPage
       goToPage(newPage)
-    }
+    },
+    getPage: () => page
   }
 }
 

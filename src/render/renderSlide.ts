@@ -3,8 +3,7 @@ import renderElement from './renderElement'
 
 const hasImage = (slide: Slide) =>
   slide.map(d => d.type).includes('image')
-  || slide.map(d => d.lang).filter(Boolean).includes('mmd')
-  || slide.map(d => d.lang).filter(Boolean).includes('mermaid')
+  || slide.filter(d => d.type === 'code').length > 0
 
 export default (slide: Slide) =>
   hasImage(slide)
