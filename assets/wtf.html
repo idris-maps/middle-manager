@@ -45,37 +45,34 @@ graph LR
   F --> G[Nice]
   G --> H[Nicer]
   H --> I[Nicest]
+</div>
+  </div>
+</div>
+    
 
-
-
-
-
-    <div>
+<div class="slide">
+  <div class="slide-with-image">
+    <div class="mermaid">
+sequenceDiagram
+  Alice->>+John: Hello John, how are you?
+  Alice->>+John: John, can you hear me?
+  John-->>-Alice: Hi Alice, I can hear you!
+  John-->>-Alice: I feel great!
+  Note right of John: Who the fuck is this?
+  Alice-->>John: Hello
+  Alice-->>Bob: Say hello
+  Bob->>John: Hello
+  Bob->>Alice: Happy?
+  Alice-->>Bob: Asshole...
+  Alice-->>John: Bob is a dickhead
+  Alice-->>John: Hello
+</div>
   </div>
 </div>
     
     </div>
     <script src="main.js"></script>
-    <script src="https://unpkg.com/mermaid@8.4.6/dist/mermaid.min.js"></script>
-    <script>
-const mermaidHack = `
-.node polygon, .node rect, .node circle, .node path, .node ellipse { fill: none; stroke: white; }
-.edgePath .path { stroke: white; }
-.edgePath marker path { fill: white; }
-.edgeLabel { background-color: rgba(25, 25, 25,0.8); color: white; }
-.label { color: white; }
-
-rect.actor { fill: rgb(25, 25, 25); stroke: white; }
-text.actor { fill: white; }
-.actor-line { stroke: darkgray; }
-.messageText { fill: white; }
-#arrowhead, #crosshead, #sequencenumber { fill: darkgray; }
-.messageLine0, .messageLine1 { stroke: darkgray; }
-rect.activation0, rect.activation1 { stroke: darkgray; fill: black; }
-rect.note { fill: darkgray; stroke: gray; }
-`
-mermaid.initialize({startOnLoad:true, theme: 'neutral', themeCSS: mermaidHack })
-    </script>
+    <script src="mermaid.min.js"></script><script src="mermaidInit.dark.js"></script>
   </body>
 </html>
 

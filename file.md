@@ -26,3 +26,21 @@ graph LR
   G --> H[Nicer]
   H --> I[Nicest]
 ```
+
+---
+
+```mermaid
+sequenceDiagram
+  Alice->>+John: Hello John, how are you?
+  Alice->>+John: John, can you hear me?
+  John-->>-Alice: Hi Alice, I can hear you!
+  John-->>-Alice: I feel great!
+  Note right of John: Who the fuck is this?
+  Alice-->>John: Hello
+  Alice-->>Bob: Say hello
+  Bob->>John: Hello
+  Bob->>Alice: Happy?
+  Alice-->>Bob: Asshole...
+  Alice-->>John: Bob is a dickhead
+  Alice-->>John: Hello
+```

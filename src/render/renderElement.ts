@@ -9,7 +9,7 @@ const renderImage = (value: string) =>
 const renderMermaid = (value: string) =>
 `<div class="mermaid">
 ${value}
-<div>`
+</div>`
 
 export default ({ type, lang, value }: SlideElement) => {
 
