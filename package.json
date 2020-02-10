@@ -4,7 +4,8 @@
   "main": "index.js",
   "scripts": {
     "test": "ava --verbose",
-    "update-bullshit-terms": "curl https://raw.githubusercontent.com/mourner/bullshit.js/master/src/terms.js > src/bullshit/terms.ts"
+    "update-bullshit-terms": "curl https://raw.githubusercontent.com/mourner/bullshit.js/master/src/terms.js > src/bullshit/terms.ts",
+    "dev:client": "parcel client/index.html"
   },
   "keywords": [],
   "author": "",
