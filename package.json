@@ -6,6 +6,7 @@
     "test": "ava --verbose",
     "update-bullshit-terms": "curl https://raw.githubusercontent.com/mourner/bullshit.js/master/src/terms.js > src/bullshit/terms.ts",
     "update-mermaid": "curl https://unpkg.com/mermaid@8.4.6/dist/mermaid.min.js > assets/mermaid.min.js",
+    "update-prism-langs": "ts-node scripts/updatePrismLangs",
     "build:client": "rollup --config rollup.config.js",
     "dev:client": "parcel client/index.html"
   },
@@ -26,7 +27,8 @@
     "typescript": "^3.7.5"
   },
   "dependencies": {
-    "marked": "^0.8.0"
+    "marked": "^0.8.0",
+    "prismjs": "^1.19.0"
   },
   "ava": {
     "extensions": [

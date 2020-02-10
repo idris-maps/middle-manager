@@ -1,5 +1,7 @@
 import marked from 'marked'
+import highlight from './highlight'
 import { SlideElement } from '../parseMd'
+
 
 const renderImage = (value: string) =>
   `<div class="image" style="background-image: url(${value.split('(')[1].split(')')[0]})" aria-label="${value.split(']')[0].split('[')[1]}"></div>`
@@ -15,6 +17,9 @@ export default ({ type, lang, value }: SlideElement) => {
   }
   if (type === 'code' && ['mmd', 'mermaid'].includes(lang)) {
     return renderMermaid(value)
+  }
+  if (type === 'code') {
+    return highlight(value, lang)
   }
   return marked(value)
 }
