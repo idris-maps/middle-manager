@@ -1,150 +1,147 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <style>
-* {
-  box-sizing: border-box;
-  scrollbar-width: none;
-}
-html, body {
-  margin: 0;
-  padding: 0;
-}
-
-html, body, .presentation, .slide {
-  width: 100vw;
-  height: 100vh;
-}
-
-body {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-  font-size: 2.5vw;
-  background-color: rgb(25, 25, 25);
-  color: white
-}
-
-a { color: inherit; }
-
-.presentation {
-  scroll-snap-type: mandatory;
-  scroll-snap-points-y: repeat(100vh);
-  scroll-snap-type: y mandatory;
-}
-
-.slide {
-  scroll-snap-align: start;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: justify;
-  padding: 5%;
-  overflow: hidden;
-}
-
-.slide img {
-  max-width: 100vw;
-  max-height: 100vh;
-}
-
-.slide-with-image {
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-  width: 100%;
-  text-align: center;
-}
-
-.slide-with-image .image, .slide-with-image .mermaid {
-  flex-grow: 1;
-  width: 100%;
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center center;
-}
-
-div.mermaid {
-  font-family: inherit;
-  font-size: 0.6em;
-  padding: 1em;
-}
-
-div.mermaid svg {
-  max-width: 90vw;
-  max-height: 90vh;
-}
-
-    </style>
+    <title></title>
+    <link href="prism.okaidia.css" rel="stylesheet">
+    <link href="dark.css" rel="stylesheet">
   </head>
   <body>
     <div class="presentation">
-      <div class="slide">
-        <div class="slide-with-image">
-          <p>hello</p>
-          <div class="mermaid">
-graph LR
-	A[Christmas] -->|Get money| B(Go shopping)
-	B --> C{Let me think}
-	C -->|One| D[Laptop]
-	C -->|Two| E[iPhone]
-	C -->|Three| F[fa:fa-car Car]
-  F --> G[Nice]
-  G --> H[Nicer]
-  H --> I[Nicest]
-          </div>
-        </div>
-      </div>
-      <div class="slide">
-        <div class="mermaid">
-sequenceDiagram
-	Alice->>+John: Hello John, how are you?
-	Alice->>+John: John, can you hear me?
-	John-->>-Alice: Hi Alice, I can hear you!
-	John-->>-Alice: I feel great!
-  Note right of John: Who the fuck is this?
-  Alice-->>John: Hello
-  Alice-->>Bob: Say hello
-  Bob->>John: Hello
-  Bob->>Alice: Happy?
-  Alice-->>Bob: Asshole...
-  Alice-->>John: Bob is a dickhead
-  Alice-->>John: Hello
-        </div>
-      </div>
-      <div class="slide">
-        <div>
-          <h1>Hello</h1>
-        </div>
-      </div>
-      <div class="slide">
-        <div>
-          <h2>A title - can be rather loooong</h2>
-          <p><a href="https://idris-maps.com">Lorem ipsum</a> dolor sit amet, <b>consectetur adipiscing elit</b>, sed do eiusmod tempor <i>incididunt</i> ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-        </div>
-      </div>
-      <div class="slide">
-        <div>
-          <h2>Another one with a list</h2>
-          <ul>
-            <li>One</li>
-            <li>Two</li>
-            <li>Three</li>
-          </ul>
-        </div>
-      </div>
-      <div class="slide">
-        <div class="slide-with-image">
-          <div class="image" style="background-image: url()"></div>
-        </div>
-      </div>
-      <div class="slide">
-        <div class="slide-with-image">
-          <h2>A title</h2>
-          <div class="image" style="background-image: url()"></div>
-        </div>
-      </div>
+
+<div class="slide">
+  <div class="text"><h1 id="hello">Hello</h1>
+</div>
+</div>
+    
+
+<div class="slide">
+  <div class="text"><h2 id="small-text">Small text</h2>
+<p> Lorem ipsum dolor sit amet, <em>consectetur adipiscing elit</em>. Sed auctor velit eros, eu mattis lorem finibus nec. In tempor bibendum diam laoreet eleifend. <strong>Vivamus volutpat luctus bibendum</strong>. Maecenas pretium nibh nec est hendrerit pretium.</p>
+</div>
+</div>
+    
+
+<div class="slide">
+  <div class="text"><h2 id="some-text">Some text</h2>
+<p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed auctor velit eros, eu mattis lorem finibus nec. In tempor bibendum diam laoreet eleifend. Vivamus volutpat luctus bibendum. Maecenas pretium nibh nec est hendrerit pretium. Cras et erat viverra, pulvinar diam ac, imperdiet est. Quisque ultricies leo nec mauris rutrum, at eleifend enim pulvinar. Fusce imperdiet tincidunt massa in auctor. In tincidunt fermentum est vitae fermentum. Donec non lorem a urna placerat porttitor. Proin rhoncus nibh vitae erat pretium commodo. Maecenas et leo mollis, molestie tortor sed, eleifend dui. Duis a enim nec lacus tincidunt vulputate. Vestibulum porta consectetur nisi, quis sodales purus ornare at. Nulla non mattis lectus, quis ultrices quam. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent elementum, nisi a rhoncus volutpat, dui arcu ultricies ligula, at suscipit dui metus eget mi.</p>
+</div>
+</div>
+    
+
+<div class="slide">
+  <div class="text"><h2 id="a-list">A list</h2>
+<ul>
+<li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+<li>Sed auctor velit eros, eu mattis lorem finibus nec.</li>
+<li>In tempor bibendum diam laoreet eleifend.</li>
+<li>Vivamus volutpat luctus bibendum.</li>
+<li>Maecenas pretium nibh nec est hendrerit pretium.</li>
+</ul>
+</div>
+</div>
+    
+
+<div class="slide">
+  <div class="text"><h2 id="an-ordered-list">An ordered list</h2>
+<ol>
+<li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+<li>Sed auctor velit eros, eu mattis lorem finibus nec.</li>
+<li>In tempor bibendum diam laoreet eleifend.</li>
+<li>Vivamus volutpat luctus bibendum.</li>
+<li>Maecenas pretium nibh nec est hendrerit pretium.</li>
+</ol>
+</div>
+</div>
+    
+
+<div class="slide">
+  <div class="text"><h2 id="block-quote">Block quote</h2>
+<blockquote>
+<p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed auctor velit eros, eu mattis lorem finibus nec. In tempor bibendum diam laoreet eleifend. Vivamus volutpat luctus bibendum. Maecenas pretium nibh nec est hendrerit pretium.</p>
+</blockquote>
+</div>
+</div>
+    
+
+<div class="slide">
+  <div class="slide-with-image">
+    <div class="text"><h2 id="small-code">Small code</h2>
+</div>
+		<div class="codeblock codeblock-small"><pre><code class="language-ts"><span class="token keyword">const</span> <span class="token function-variable function">x</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">n<span class="token operator">:</span> <span class="token builtin">number</span></span><span class="token punctuation">)</span> <span class="token operator">=></span> n <span class="token operator">+</span> <span class="token number">1</span></code></pre></div>
+  </div>
+</div>
+    
+
+<div class="slide">
+  <div class="slide-with-image">
+    <div class="text"><h2 id="medium-code">Medium code</h2>
+</div>
+		<div class="codeblock "><pre><code class="language-ts"><span class="token keyword">const</span> <span class="token function-variable function">onLoad</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> slides <span class="token operator">=</span> <span class="token builtin">Array</span><span class="token punctuation">.</span><span class="token keyword">from</span><span class="token punctuation">(</span>document<span class="token punctuation">.</span><span class="token function">getElementsByClassName</span><span class="token punctuation">(</span><span class="token string">'slide'</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+  <span class="token keyword">const</span> <span class="token punctuation">{</span> next<span class="token punctuation">,</span> prev<span class="token punctuation">,</span> goToPage<span class="token punctuation">,</span> getPage <span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token function">initPaging</span><span class="token punctuation">(</span>slides<span class="token punctuation">)</span>
+  window<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">'keydown'</span><span class="token punctuation">,</span> <span class="token function">onKeydown</span><span class="token punctuation">(</span>prev<span class="token punctuation">,</span> next<span class="token punctuation">)</span><span class="token punctuation">)</span>
+  <span class="token keyword">const</span> scroll <span class="token operator">=</span> <span class="token function">throttle</span><span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">,</span> goToPage<span class="token punctuation">)</span>
+  window<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">'scroll'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> scroll<span class="token punctuation">.</span><span class="token function">onChange</span><span class="token punctuation">(</span>window<span class="token punctuation">.</span>pageYOffset <span class="token operator">/</span> window<span class="token punctuation">.</span>innerHeight<span class="token punctuation">)</span><span class="token punctuation">)</span>
+  window<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">'resize'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token function">goToPage</span><span class="token punctuation">(</span><span class="token function">getPage</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span></code></pre></div>
+  </div>
+</div>
+    
+
+<div class="slide">
+  <div class="slide-with-image">
+    <div class="text"><h2 id="big-code">Big code</h2>
+</div>
+		<div class="codeblock codeblock-big"><pre><code class="language-ts"><span class="token keyword">const</span> <span class="token function-variable function">onKeydown</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token function-variable function">prev</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token keyword">void</span><span class="token punctuation">,</span> <span class="token function-variable function">next</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token keyword">void</span><span class="token punctuation">)</span> <span class="token operator">=></span>
+  <span class="token punctuation">(</span><span class="token parameter">e<span class="token operator">:</span> KeyboardEvent</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+    <span class="token keyword">switch</span> <span class="token punctuation">(</span>e<span class="token punctuation">.</span>key<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">case</span> <span class="token string">'ArrowDown'</span><span class="token operator">:</span> <span class="token punctuation">{</span> e<span class="token punctuation">.</span><span class="token function">preventDefault</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token keyword">return</span> <span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">}</span>
+      <span class="token keyword">case</span> <span class="token string">'ArrowLeft'</span><span class="token operator">:</span> <span class="token punctuation">{</span> e<span class="token punctuation">.</span><span class="token function">preventDefault</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token keyword">return</span> <span class="token function">prev</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">}</span>
+      <span class="token keyword">case</span> <span class="token string">'ArrowRight'</span><span class="token operator">:</span> <span class="token punctuation">{</span> e<span class="token punctuation">.</span><span class="token function">preventDefault</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token keyword">return</span> <span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">}</span>
+      <span class="token keyword">case</span> <span class="token string">'ArrowUp'</span><span class="token operator">:</span> <span class="token punctuation">{</span> e<span class="token punctuation">.</span><span class="token function">preventDefault</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token keyword">return</span> <span class="token function">prev</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">}</span>
+      <span class="token keyword">default</span><span class="token operator">:</span> <span class="token keyword">return</span> <span class="token keyword">null</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+
+<span class="token keyword">const</span> <span class="token function-variable function">onLoad</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> slides <span class="token operator">=</span> <span class="token builtin">Array</span><span class="token punctuation">.</span><span class="token keyword">from</span><span class="token punctuation">(</span>document<span class="token punctuation">.</span><span class="token function">getElementsByClassName</span><span class="token punctuation">(</span><span class="token string">'slide'</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+  <span class="token keyword">const</span> <span class="token punctuation">{</span> next<span class="token punctuation">,</span> prev<span class="token punctuation">,</span> goToPage<span class="token punctuation">,</span> getPage <span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token function">initPaging</span><span class="token punctuation">(</span>slides<span class="token punctuation">)</span>
+  window<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">'keydown'</span><span class="token punctuation">,</span> <span class="token function">onKeydown</span><span class="token punctuation">(</span>prev<span class="token punctuation">,</span> next<span class="token punctuation">)</span><span class="token punctuation">)</span>
+  <span class="token keyword">const</span> scroll <span class="token operator">=</span> <span class="token function">throttle</span><span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">,</span> goToPage<span class="token punctuation">)</span>
+  window<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">'scroll'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> scroll<span class="token punctuation">.</span><span class="token function">onChange</span><span class="token punctuation">(</span>window<span class="token punctuation">.</span>pageYOffset <span class="token operator">/</span> window<span class="token punctuation">.</span>innerHeight<span class="token punctuation">)</span><span class="token punctuation">)</span>
+  window<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">'resize'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token function">goToPage</span><span class="token punctuation">(</span><span class="token function">getPage</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span></code></pre></div>
+  </div>
+</div>
+    
+
+<div class="slide">
+  <div class="slide-with-image">
+    <div class="text"><h2 id="vertical-image">Vertical image</h2>
+</div>
+		<div class="image" style="background-image: url(./images/vertical.png)" aria-label="img"></div>
+  </div>
+</div>
+    
+
+<div class="slide">
+  <div class="slide-with-image">
+    <div class="text"><h2 id="horizontal-image">Horizontal image</h2>
+</div>
+		<div class="image" style="background-image: url(./images/horizontal.png)" aria-label="img"></div>
+  </div>
+</div>
+    
+
+<div class="slide">
+  <div class="slide-with-image">
+    <div class="image" style="background-image: url(./images/horizontal.png)" aria-label="img"></div>
+  </div>
+</div>
+    
     </div>
     <script src="main.js"></script>
-    <script src="mermaid.min.js"></script>
-    <script src="mermaidInit.dark.js"></script>
+    
   </body>
 </html>
+

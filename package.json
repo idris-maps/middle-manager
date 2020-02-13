@@ -8,7 +8,8 @@
     "update-mermaid": "curl https://unpkg.com/mermaid@8.4.6/dist/mermaid.min.js > assets/mermaid.min.js",
     "update-prism-langs": "ts-node scripts/updatePrismLangs",
     "build:client": "rollup --config rollup.config.js",
-    "dev:client": "parcel client/index.html"
+    "dev:client": "parcel client/index.html",
+    "midman": "ts-node src/index"
   },
   "keywords": [],
   "author": "",

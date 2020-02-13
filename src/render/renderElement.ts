@@ -11,8 +11,13 @@ const renderMermaid = (value: string) =>
 ${value}
 </div>`
 
-export default ({ type, lang, value }: SlideElement) => {
+const setCodeBlockSize = (linesOfCode: number) => {
+  if (linesOfCode < 5) { return 'codeblock-small' }
+  if (linesOfCode > 10) { return 'codeblock-big' }
+  return ''
+}
 
+export default (linesOfCode: number = 0) => ({ type, lang, value }: SlideElement) => {
   if (type === 'image') {
     return renderImage(value)
   }
@@ -20,7 +25,7 @@ export default ({ type, lang, value }: SlideElement) => {
     return renderMermaid(value)
   }
   if (type === 'code') {
-    return `<div class="codeblock">${highlight(value, lang || '')}</div>`
+    return `<div class="codeblock ${setCodeBlockSize(linesOfCode)}">${highlight(value, lang || '')}</div>`
   }
-  return marked(value)
+  return `<div class="text">${marked(value)}</div>`
 }

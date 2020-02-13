@@ -58,20 +58,37 @@ a { color: inherit; }
   background-position: center center;
 }
 
+.codeblock {
+  overflow: scroll;
+}
+
+.text strong {
+  font-weight: inherit;
+  color: rgb(194, 33, 33);
+}
+
+.text em {
+  font-weight: bolder;
+}
+
+.text blockquote {
+  font-style: italic;
+  color: rgb(207, 207, 207);
+}
+
 pre {
   font-size: 0.8em;
-  padding: 1em;
+  width: 100%;
+  padding-left: 0.5em;
+  border-radius: 0.1em;
   text-align: left;
-  background-color: white;
+  background-color: rgb(25, 25, 25);
 }
 
-div.mermaid {
-  font-family: inherit;
-  font-size: 0.6em;
-  padding: 1em;
+.codeblock-small pre {
+  font-size: 1em;
 }
 
-div.mermaid svg {
-  max-width: 90vw;
-  max-height: 90vh;
+.codeblock-big pre {
+  font-size: 0.5em;
 }
