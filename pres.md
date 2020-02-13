@@ -8,7 +8,7 @@
 
 ---
 
-## Some text
+## **Some** text
 
  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed auctor velit eros, eu mattis lorem finibus nec. In tempor bibendum diam laoreet eleifend. Vivamus volutpat luctus bibendum. Maecenas pretium nibh nec est hendrerit pretium. Cras et erat viverra, pulvinar diam ac, imperdiet est. Quisque ultricies leo nec mauris rutrum, at eleifend enim pulvinar. Fusce imperdiet tincidunt massa in auctor. In tincidunt fermentum est vitae fermentum. Donec non lorem a urna placerat porttitor. Proin rhoncus nibh vitae erat pretium commodo. Maecenas et leo mollis, molestie tortor sed, eleifend dui. Duis a enim nec lacus tincidunt vulputate. Vestibulum porta consectetur nisi, quis sodales purus ornare at. Nulla non mattis lectus, quis ultrices quam. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent elementum, nisi a rhoncus volutpat, dui arcu ultricies ligula, at suscipit dui metus eget mi.
 
