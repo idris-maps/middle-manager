@@ -3,12 +3,11 @@ import throttle from './throttle'
 
 const onKeydown = (prev: () => void, next: () => void) =>
   (e: KeyboardEvent) => {
-    e.preventDefault();
     switch (e.key) {
-      case 'ArrowDown': { return next() }
-      case 'ArrowLeft': { return prev() }
-      case 'ArrowRight': { return next() }
-      case 'ArrowUp': { return prev() }
+      case 'ArrowDown': { e.preventDefault(); return next() }
+      case 'ArrowLeft': { e.preventDefault(); return prev() }
+      case 'ArrowRight': { e.preventDefault(); return next() }
+      case 'ArrowUp': { e.preventDefault(); return prev() }
       default: return null
     }
   }
@@ -22,4 +21,4 @@ const onLoad = () => {
   window.addEventListener('resize', () => goToPage(getPage()))
 }
 
-window.addEventListener('load', onLoad)
+window.onload = onLoad

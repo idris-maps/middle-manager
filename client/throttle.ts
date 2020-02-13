@@ -1,6 +1,6 @@
 type OnTimeout = (value: number) => void
 
-export default (time: number = 500, onTimeout: OnTimeout) => {
+export default (time: number = 200, onTimeout: OnTimeout) => {
   let prev = 0
   let f: OnTimeout = onTimeout
   let timeout: any
