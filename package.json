@@ -27,7 +27,8 @@
   },
   "dependencies": {
     "marked": "^0.8.0",
-    "prismjs": "^1.19.0"
+    "prismjs": "^1.19.0",
+    "xml-string": "^2.0.2"
   },
   "ava": {
     "extensions": [

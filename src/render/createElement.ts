@@ -1,7 +1,7 @@
 import marked from 'marked'
 import highlight from './highlight'
 import { SlideElement } from '../parseMd'
-
+import Tag from 'xml-string/dist/Tag'
 
 const renderImage = (value: string) =>
   `<div class="image" style="background-image: url(${value.split('(')[1].split(')')[0]})" aria-label="${value.split(']')[0].split('[')[1]}"></div>`
@@ -17,15 +17,22 @@ const setCodeBlockSize = (linesOfCode: number) => {
   return ''
 }
 
-export default (linesOfCode: number = 0) => ({ type, lang, value }: SlideElement) => {
+export default (linesOfCode: number, root: Tag) => ({ type, lang, value }: SlideElement) => {
   if (type === 'image') {
-    return renderImage(value)
-  }
-  if (type === 'code' && ['mmd', 'mermaid'].includes(lang || '')) {
-    return renderMermaid(value)
+    root.child('div').attr({
+      'class': 'image',
+      style: `background-image: url(${value.split('(')[1].split(')')[0]})`,
+      'aria-label': value.split(']')[0].split('[')[1],
+    })
+    return
   }
   if (type === 'code') {
-    return `<div class="codeblock ${setCodeBlockSize(linesOfCode)}">${highlight(value, lang || '')}</div>`
+    root.child('div')
+      .attr({ 'class': `codeblock ${setCodeBlockSize(linesOfCode)}` })
+      .data(highlight(value, lang || ''))
+    return
   }
-  return `<div class="text">${marked(value)}</div>`
+  root.child('div').attr({ 'class': 'text' })
+    .data(marked(value))
 }
+
