@@ -3,7 +3,9 @@ import renderElement from './renderElement'
 
 const hasImage = (slide: Slide) =>
   slide.map(d => d.type).includes('image')
-  || slide.filter(d => d.type === 'code').length > 0
+
+const hasCode = (slide: Slide) =>
+  slide.filter(d => d.type === 'code').length > 0
 
 const countCodeLines = (slide: Slide) =>
   slide.filter(d => d.type === 'code')
@@ -11,17 +13,31 @@ const countCodeLines = (slide: Slide) =>
     .reduce((r, d) => r + d, 0)
 
 
-export default (slide: Slide) =>
-  hasImage(slide)
-   ? `
-<div class="slide">
-  <div class="slide-with-image">
-    ${slide.map(renderElement(countCodeLines(slide))).join(`\n\t\t`)}
+export default (slide: Slide) => {
+  if (hasImage(slide)) {
+    return `
+    <div class="slide">
+      <div class="slide-with-image">
+        ${slide.map(renderElement(countCodeLines(slide))).join(`\n\t\t`)}
+      </div>
+    </div>
+        `
+  }
+  if (hasCode(slide)) {
+    return `
+    <div class="slide">
+      <div class="slide-container">
+      <div class="slide-with-code">
+      ${slide.map(renderElement(countCodeLines(slide))).join(`\n\t`)}
+      </div>
+      </div>
+    </div>`
+  }
+  return `
+  <div class="slide">
+    <div class="slide-container">
+    ${slide.map(renderElement(countCodeLines(slide))).join(`\n\t`)}
+    </div>
   </div>
-</div>
-    `
-  : `
-<div class="slide">
-  ${slide.map(renderElement(countCodeLines(slide))).join(`\n\t`)}
-</div>
-    `
+      `
+}

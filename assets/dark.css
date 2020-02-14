@@ -27,14 +27,17 @@ a { color: inherit; }
   scroll-snap-type: y mandatory;
 }
 
-.slide {
+.slide, .slide-container {
   scroll-snap-align: start;
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: justify;
-  padding: 5%;
   overflow: hidden;
+}
+
+.slide {
+  padding: 5%;
 }
 
 .slide img {
@@ -50,7 +53,7 @@ a { color: inherit; }
   text-align: center;
 }
 
-.slide-container {
+.slide-container, .slide-with-code {
   width: 100%;
 }
 
