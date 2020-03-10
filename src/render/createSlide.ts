@@ -1,4 +1,4 @@
-import { Slide } from '../parseMd'
+import { Slide } from '../types'
 import Tag from 'xml-string/dist/Tag'
 import createElement from './createElement'
 

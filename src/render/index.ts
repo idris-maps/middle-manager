@@ -1,5 +1,5 @@
 
-import { Slide } from '../parseMd'
+import { Slide } from '../types'
 import createSlide from './createSlide'
 import xml from 'xml-string'
 import Tag from 'xml-string/dist/Tag'

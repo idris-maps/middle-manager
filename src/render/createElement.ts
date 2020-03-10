@@ -1,10 +1,7 @@
 import marked from 'marked'
 import highlight from './highlight'
-import { SlideElement } from '../parseMd'
+import { SlideElement } from '../types'
 import Tag from 'xml-string/dist/Tag'
-
-const renderImage = (value: string) =>
-  `<div class="image" style="background-image: url(${value.split('(')[1].split(')')[0]})" aria-label="${value.split(']')[0].split('[')[1]}"></div>`
 
 const renderMermaid = (value: string) =>
 `<div class="mermaid">

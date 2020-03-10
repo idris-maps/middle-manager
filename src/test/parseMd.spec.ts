@@ -1,5 +1,5 @@
 import test from 'ava'
-import { parseSlide } from '../parseMd'
+import { parseSlide } from '../utils/parseMd'
 
 test('parseSlide', t => {
   const one = `

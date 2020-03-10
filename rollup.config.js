@@ -8,7 +8,7 @@ const plugins = [
 
 export default [
   {
-    input: './client/index.ts',
+    input: './src_client/index.ts',
     output: { file: 'assets/main.js' },
     plugins,
   },

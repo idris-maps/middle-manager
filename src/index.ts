@@ -1,7 +1,6 @@
-import parseCmd, { onError, Config } from './parseCmd'
-import parseMd from './parseMd'
-import render from './render'
-import read from './read'
+import parseCmd, { onError, Config } from './utils/parseCmd'
+import parseMd from './utils/parseMd'
+import read from './utils/read'
 import renderHTML from './render'
 
 const config = parseCmd()
