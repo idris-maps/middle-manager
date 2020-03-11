@@ -21,33 +21,45 @@ const getAllCodeLangs = (slides: Slide[]) =>
     }, [])
     .filter(isString)
 
-const createHead = (html: Tag, title: string, mainCss: string, prismCss?: string) => {
+const createHead = (html: Tag, title: string, cssFiles: string[]) => {
   const head = html.child('head')
   head.child('meta').attr({ charset: 'utf-8' })
   head.child('title').data(title)
-  head.child('link').attr({ rel: 'stylesheet', href: mainCss })
-  if (prismCss) {
-    head.child('link').attr({ rel: 'stylesheet', href: prismCss })
-  }
+  cssFiles.forEach(href => head.child('link').attr({ rel: 'stylesheet', href }))
 }
 
-const createBody = (html: Tag, slides: Slide[]) => {
+const createBody = (html: Tag, slides: Slide[], jsFiles: string[]) => {
   const body = html.child('body')
   const presentation = body.child('div').attr({ 'class': 'presentation' })
   slides.map(createSlide(presentation))
-  body.child('script').attr({ src: 'main.js' })
+  jsFiles.forEach(src => body.child('script').attr({ src }))
 }
 
 const nonPrismCodeLanguages: string[] = [
+  'mermaid',
   /* TODO mermaid, graphs... */
 ]
 const needsPrism = (langs: string[]) => langs.filter(d => !nonPrismCodeLanguages.includes(d)).length > 0
+const needsMermaid = (langs: string[]) => Boolean(langs.find(d => d === 'mermaid'))
 
 export default (slides: Slide[]) => {
   const langs = getAllCodeLangs(slides)
   const html = xml.create('html')
-  createHead(html, getTitle(slides), 'dark.css', needsPrism(langs) ? 'prism.dark.css' : undefined)
-  createBody(html, slides)
+
+  const cssFiles: string[] = [
+    'dark.css',
+    needsPrism(langs) ? 'prism.dark.css' : undefined,
+    needsMermaid(langs) ? 'mermaid.dark.css' : undefined
+  ].filter(isString)
+
+  createHead(html, getTitle(slides), cssFiles)
+
+  const jsFiles: string[] = [
+    'main.js',
+    ...(needsMermaid ? ['mermaid.min.js', 'mermaidInit.js'] : [])
+  ]
+
+  createBody(html, slides, jsFiles)
 
   return `<!DOCTYPE html>
 ${html.outer()}

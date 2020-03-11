@@ -1,4 +1,4 @@
-const onLoad = () => {
+const didLoad = () => {
   Array.from(document.querySelectorAll('.mermaid svg style')).map(d => d.innerHTML = '');
   Array.from(document.querySelectorAll('.mermaid svg')).map(d => {
     d.removeAttribute('width');
@@ -18,7 +18,7 @@ if (window.mermaid) {
     startOnLoad:true,
     theme: 'neutral',
     mermaid: {
-      callback: onLoad,
+      callback: didLoad,
     }
   });
 } else {

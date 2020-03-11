@@ -2,6 +2,7 @@
 div.mermaid {
   font-family: inherit;
   font-size: 15px;
+  text-align: center;
 }
 
 div.mermaid svg {
