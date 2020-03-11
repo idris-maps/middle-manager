@@ -1,0 +1,65 @@
+
+div.mermaid {
+  font-family: inherit;
+  font-size: 15px;
+}
+
+div.mermaid svg {
+  max-width: 90vw;
+  max-height: 90vh;
+}
+
+/* flow */
+
+.mermaid-flow { font-size: 15px; }
+.mermaid-flow .node polygon,
+.mermaid-flow .node rect,
+.mermaid-flow .node circle,
+.mermaid-flow .node path,
+.mermaid-flow .node ellipse {
+  fill: none;
+  stroke: white;
+}
+
+.mermaid-flow .edgePath .path { stroke: white; }
+.mermaid-flow .edgePath marker path { fill: white; }
+.mermaid-flow .edgeLabel { background-color: rgba(25, 25, 25,0.9); color: white; }
+
+.mermaid .cluster rect { fill: none; stroke: darkgray; }
+
+/* sequence */
+
+.mermaid-sequence { font-size: 15px; }
+.mermaid-sequence rect.actor { fill: rgb(25, 25, 25); stroke: white; }
+.mermaid-sequence text.actor { fill: white; }
+.mermaid-sequence .actor-line { stroke: darkgray; }
+
+.mermaid-sequence .messageText { fill: white; }
+.mermaid-sequence #arrowhead, .mermaid #crosshead, .mermaid #sequencenumber { fill: darkgray; stroke: none; }
+.mermaid-sequence .messageLine0, .mermaid .messageLine1 { stroke: darkgray; stroke-width: 1.5; }
+
+.mermaid-sequence rect.activation0, .mermaid rect.activation1 { stroke: darkgray; fill: black; }
+.mermaid-sequence rect.note { fill: darkgray; stroke: gray; }
+
+.mermaid-sequence line.loopLine { stroke: darkgray; }
+.mermaid-sequence polygon.labelBox { fill: darkgray; }
+.mermaid-sequence text.loopText { fill: darkgray; }
+
+/* class */
+.mermaid-class { font-size: 15px; }
+.mermaid-class text { font-size: 8px; fill: white; }
+.mermaid-class .classGroup rect { stroke: white; fill: none; stroke-width: 0.8; }
+.mermaid-class .classGroup line { stroke: white; stroke-width: 0.5; }
+.mermaid-class .relation { stroke: white; fill: none; }
+.mermaid-class marker { fill: white; }
+.mermaid-class .cardinality text { font-size: 5px; }
+.mermaid-class .classLabel { font-size: 6px; }
+.mermaid-class .classLabel .box { fill: rgba(25, 25, 25,0.9); }
+
+/* state */
+.mermaid-state text { font-size: 11px; fill: white; }
+.mermaid-state path.transition { stroke: white; fill: none; stroke-linecap: round; }
+.mermaid-state marker { fill: white; stroke: white; }
+
+.mermaid-state .stateGroup rect,
+.mermaid-state .stateGroup circle { fill: rgb(25, 25, 25);; stroke: darkgray; stroke-width: 0.5; }

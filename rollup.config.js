@@ -8,8 +8,12 @@ const plugins = [
 
 export default [
   {
-    input: './src_client/index.ts',
+    input: './src_client/main/index.ts',
     output: { file: 'assets/main.js' },
     plugins,
+  },
+  {
+    input: './src_client/mermaid/index.js',
+    output: { file: 'assets/mermaidInit.js' },
   },
 ]
