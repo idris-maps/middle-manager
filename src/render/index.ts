@@ -42,13 +42,34 @@ const createBody = (html: Tag, slides: Slide[], jsFiles: string[]) => {
 
 const needsPrism = (langs: string[]) => langs.length > 0
 
-export default async (slides: Slide[]) => {
+const allowedThemes = [
+  'dark',
+  'light',
+]
+
+const prismByTheme = {
+  'dark': 'prism-okaidia.css',
+  'light': 'prism-solarizedlight.css',
+}
+
+const getThemeCss = (theme: string) =>
+  allowedThemes.includes(theme)
+    ? `${theme}.css`
+    : 'dark.css'
+
+const getPrismCss = (theme: string, langs: string[]): string | undefined => {
+  if (!needsPrism(langs)) { return undefined }
+  // @ts-ignore
+  return prismByTheme[allowedThemes.includes(theme) ? theme : 'dark']
+}
+
+export default async (slides: Slide[], theme: string) => {
   const langs = getAllCodeLangs(slides)
   const html = xml.create('html')
 
   const cssFileNames: string[] = [
-    'dark.css',
-    needsPrism(langs) ? 'prism-dark.css' : undefined,
+    getThemeCss(theme),
+    getPrismCss(theme, langs),
   ].filter(isString)
   const cssFiles = await Promise.all(cssFileNames.map(getFile))
 
