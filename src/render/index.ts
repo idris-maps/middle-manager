@@ -35,12 +35,7 @@ const createBody = (html: Tag, slides: Slide[], jsFiles: string[]) => {
   jsFiles.forEach(src => body.child('script').attr({ src }))
 }
 
-const nonPrismCodeLanguages: string[] = [
-  'mermaid',
-  /* TODO mermaid, graphs... */
-]
-const needsPrism = (langs: string[]) => langs.filter(d => !nonPrismCodeLanguages.includes(d)).length > 0
-const needsMermaid = (langs: string[]) => Boolean(langs.find(d => d === 'mermaid'))
+const needsPrism = (langs: string[]) => langs.length > 0
 
 export default (slides: Slide[]) => {
   const langs = getAllCodeLangs(slides)
@@ -49,19 +44,17 @@ export default (slides: Slide[]) => {
   const cssFiles: string[] = [
     'dark.css',
     needsPrism(langs) ? 'prism.dark.css' : undefined,
-    needsMermaid(langs) ? 'mermaid.dark.css' : undefined
   ].filter(isString)
 
   createHead(html, getTitle(slides), cssFiles)
 
   const jsFiles: string[] = [
     'main.js',
-    ...(needsMermaid ? ['mermaid.min.js', 'mermaidInit.js'] : [])
   ]
 
   createBody(html, slides, jsFiles)
 
   return `<!DOCTYPE html>
 ${html.outer()}
-`
+  `
 }
