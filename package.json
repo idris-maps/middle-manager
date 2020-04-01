@@ -8,7 +8,10 @@
     "update-prism-langs": "ts-node scripts/updatePrismLangs",
     "build:client": "rollup --config rollup.config.js",
     "dev:client": "parcel client/index.html",
-    "midman": "ts-node src/index"
+    "midman": "ts-node src/index",
+    "scss:dark": "node-sass src_style/dark.scss -o assets --output-style compressed",
+    "scss:light": "node-sass src_style/light.scss -o assets --output-style compressed",
+    "scss": "npm run scss:dark && npm run scss:light"
   },
   "keywords": [],
   "author": "",
@@ -19,6 +22,7 @@
     "@types/node": "^13.5.3",
     "@types/prismjs": "^1.16.0",
     "ava": "^3.5.2",
+    "node-sass": "^4.13.1",
     "rollup": "^1.31.0",
     "rollup-plugin-typescript": "^1.0.1",
     "rollup-plugin-uglify": "^6.0.4",

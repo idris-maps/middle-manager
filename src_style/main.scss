@@ -1,0 +1,101 @@
+* {
+  box-sizing: border-box;
+  scrollbar-width: none;
+}
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+html, body, .presentation, .slide {
+  width: 100vw;
+  height: 100vh;
+}
+
+body {
+  font-family: $font;
+  font-size: $fontSize;
+  background-color: $bgColor;
+  color: $textColor;
+}
+
+a { color: inherit; }
+
+.presentation {
+  scroll-snap-type: mandatory;
+  scroll-snap-points-y: repeat(100vh);
+  scroll-snap-type: y mandatory;
+}
+
+.slide, .slide-container {
+  scroll-snap-align: start;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: justify;
+  overflow: hidden;
+}
+
+.slide {
+  padding: 5%;
+}
+
+.slide img {
+  max-width: 100vw;
+  max-height: 100vh;
+}
+
+.slide-with-image {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  text-align: center;
+}
+
+.slide-container, .slide-with-code {
+  width: 100%;
+}
+
+.slide-with-image .image, .slide-with-image .mermaid, .slide-container .codeblock {
+  flex-grow: 1;
+  width: 100%;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.codeblock {
+  overflow: scroll;
+}
+
+.text strong {
+  font-weight: inherit;
+  color: $strongColor;
+}
+
+.text em {
+  font-weight: bolder;
+}
+
+.text blockquote {
+  font-style: $quoteFontStyle;
+  color: $quoteColor;
+}
+
+pre {
+  font-size: 0.8em;
+  width: 100%;
+  padding-left: 0.5em;
+  border-radius: 0.1em;
+  text-align: left;
+  background-color: $codeBgColor;
+}
+
+.codeblock-small pre {
+  font-size: 1em;
+}
+
+.codeblock-big pre {
+  font-size: 0.5em;
+}

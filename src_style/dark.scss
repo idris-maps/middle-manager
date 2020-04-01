@@ -1,0 +1,12 @@
+$font: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+$fontSize: 2.5vw;
+
+$bgColor: rgb(25, 25, 25);
+$textColor: white;
+$strongColor: rgb(194, 89, 89);
+$codeBgColor: rgb(26, 29, 37);
+
+$quoteFontStyle: italic;
+$quoteColor: rgb(207, 207, 207);
+
+@import './main.scss';
