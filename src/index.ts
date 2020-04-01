@@ -10,7 +10,7 @@ const run = async (config: Config) => {
   try {
     const md = await read(config.file, onError)
     const slides = parseMd(md)
-    const html = renderHTML(slides)
+    const html = await renderHTML(slides)
     console.log(html)
   } catch (e) {
     console.log(e)

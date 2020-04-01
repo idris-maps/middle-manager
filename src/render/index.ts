@@ -1,8 +1,13 @@
-
-import { Slide } from '../types'
-import createSlide from './createSlide'
 import xml from 'xml-string'
 import Tag from 'xml-string/dist/Tag'
+import { readFile } from 'fs'
+import { promisify } from 'util'
+import { resolve } from 'path'
+import { Slide } from '../types'
+import createSlide from './createSlide'
+
+const getFile = (file: string) =>
+  promisify(readFile)(resolve(__dirname, '..', '..', 'assets', file), 'utf-8')
 
 const getTitle = (slides: Slide[]) =>
   slides && slides[0] && slides[0][0] && slides[0][0].value
@@ -25,32 +30,35 @@ const createHead = (html: Tag, title: string, cssFiles: string[]) => {
   const head = html.child('head')
   head.child('meta').attr({ charset: 'utf-8' })
   head.child('title').data(title)
-  cssFiles.forEach(href => head.child('link').attr({ rel: 'stylesheet', href }))
+  cssFiles.forEach(css => head.child('style').data(css))
 }
 
 const createBody = (html: Tag, slides: Slide[], jsFiles: string[]) => {
   const body = html.child('body')
   const presentation = body.child('div').attr({ 'class': 'presentation' })
   slides.map(createSlide(presentation))
-  jsFiles.forEach(src => body.child('script').attr({ src }))
+  jsFiles.forEach(js => body.child('script').data(js))
 }
 
 const needsPrism = (langs: string[]) => langs.length > 0
 
-export default (slides: Slide[]) => {
+export default async (slides: Slide[]) => {
   const langs = getAllCodeLangs(slides)
   const html = xml.create('html')
 
-  const cssFiles: string[] = [
+  const cssFileNames: string[] = [
     'dark.css',
-    needsPrism(langs) ? 'prism.dark.css' : undefined,
+    needsPrism(langs) ? 'prism-dark.css' : undefined,
   ].filter(isString)
+  const cssFiles = await Promise.all(cssFileNames.map(getFile))
 
   createHead(html, getTitle(slides), cssFiles)
 
-  const jsFiles: string[] = [
+  const jsFileNames: string[] = [
     'main.js',
   ]
+  const jsFiles = await Promise.all(jsFileNames.map(getFile))
+
 
   createBody(html, slides, jsFiles)
 

@@ -1,4 +1,4 @@
-import { readdir, writeFile, readFile } from 'fs'
+import { readdir } from 'fs'
 import { promisify } from 'util'
 import { resolve } from 'path'
 import { exec } from 'child_process'
