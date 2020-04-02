@@ -1,7 +1,10 @@
 {
-  "name": "midman",
+  "name": "middle-manager",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "dist/index.js",
+  "bin": {
+    "middle-manager": "./dist/index.js"
+  },
   "scripts": {
     "test": "ava --verbose",
     "update-bullshit-terms": "curl https://raw.githubusercontent.com/mourner/bullshit.js/master/src/terms.js > src/bullshit/terms.ts",
@@ -11,7 +14,8 @@
     "midman": "ts-node src/index",
     "scss:dark": "node-sass src_style/dark.scss -o assets --output-style compressed",
     "scss:light": "node-sass src_style/light.scss -o assets --output-style compressed",
-    "scss": "npm run scss:dark && npm run scss:light"
+    "scss": "npm run scss:dark && npm run scss:light",
+    "build": "tsc && sed -i '1i #!/usr/bin/env node' dist/index.js && chmod -x dist/index.js"
   },
   "keywords": [],
   "author": "",
