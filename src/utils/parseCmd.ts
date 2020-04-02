@@ -8,6 +8,11 @@ parser.addArgument(
 )
 
 parser.addArgument(
+  ['-o', '--output-file'],
+  { required: true, help: 'The name of the HTML file to create' }
+)
+
+parser.addArgument(
   ['-bs', '--replace-bullshit'],
   { action: 'storeTrue', help: 'Replace bullshit words by "bullshit"' }
 )
@@ -20,6 +25,7 @@ parser.addArgument(
 
 export interface Config {
   file: string
+  output: string
   replaceBs: boolean
   theme: string
 }
@@ -27,12 +33,14 @@ export interface Config {
 export default (): Config => {
   const {
     markdown_file,
+    output_file,
     replace_bullshit,
     theme,
   } = parser.parseArgs()
 
   return {
     file: markdown_file,
+    output: output_file,
     replaceBs: Boolean(replace_bullshit),
     theme: theme || 'dark',
   }
