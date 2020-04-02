@@ -45,11 +45,13 @@ const needsPrism = (langs: string[]) => langs.length > 0
 const allowedThemes = [
   'dark',
   'light',
+  'paper',
 ]
 
 const prismByTheme = {
   'dark': 'prism-okaidia.css',
   'light': 'prism-solarizedlight.css',
+  'paper': 'prism-solarizedlight.css',
 }
 
 const getThemeCss = (theme: string) =>

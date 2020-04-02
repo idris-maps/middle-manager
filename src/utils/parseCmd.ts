@@ -19,7 +19,7 @@ parser.addArgument(
 
 parser.addArgument(
   ['-t', '--theme'],
-  { defaultValue: 'dark', help: 'Chose a theme. Defaults to "dark"' }
+  { defaultValue: 'dark', help: 'Defaults to "dark". Alternatives are "light" or "paper".' }
 )
 
 

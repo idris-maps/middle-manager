@@ -14,7 +14,8 @@
     "midman": "ts-node src/index",
     "scss:dark": "node-sass src_style/dark.scss -o assets --output-style compressed",
     "scss:light": "node-sass src_style/light.scss -o assets --output-style compressed",
-    "scss": "npm run scss:dark && npm run scss:light",
+    "scss:paper": "node-sass src_style/paper.scss -o assets --output-style compressed",
+    "scss": "npm run scss:dark && npm run scss:light && npm run scss:paper",
     "build": "tsc && sed -i '1i #!/usr/bin/env node' dist/index.js && chmod -x dist/index.js"
   },
   "keywords": [],
