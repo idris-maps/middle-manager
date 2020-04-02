@@ -1,6 +1,6 @@
 {
   "name": "middle-manager",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "dist/index.js",
   "bin": {
     "middle-manager": "./dist/index.js"
@@ -16,7 +16,8 @@
     "scss:light": "node-sass src_style/light.scss -o assets --output-style compressed",
     "scss:paper": "node-sass src_style/paper.scss -o assets --output-style compressed",
     "scss": "npm run scss:dark && npm run scss:light && npm run scss:paper",
-    "build": "tsc && sed -i '1i #!/usr/bin/env node' dist/index.js && chmod -x dist/index.js"
+    "build": "tsc && sed -i '1i #!/usr/bin/env node' dist/index.js && chmod -x dist/index.js",
+    "prepublish": "npm run build"
   },
   "keywords": [],
   "author": "",
