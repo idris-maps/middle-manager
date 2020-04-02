@@ -99,3 +99,24 @@ pre {
 .codeblock-big pre {
   font-size: 0.5em;
 }
+
+table {
+  border-collapse: collapse;
+}
+
+tbody tr:nth-child(odd) {
+  background-color: $codeBgColor;
+}
+
+tbody tr:hover {
+  background-color: $strongColor;
+  color: $bgColor;
+}
+
+table td, table th {
+  border: 1px solid $textColor;
+}
+
+td, th {
+  padding: 0.3em;
+}
