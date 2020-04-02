@@ -8,12 +8,7 @@ parser.addArgument(
 )
 
 parser.addArgument(
-  ['-bs', '--bullshit-score'],
-  { action: 'storeTrue', help: 'Calculate your bullshit score' }
-)
-
-parser.addArgument(
-  ['-r', '--replace-bullshit'],
+  ['-bs', '--replace-bullshit'],
   { action: 'storeTrue', help: 'Replace bullshit words by "bullshit"' }
 )
 
@@ -25,23 +20,20 @@ parser.addArgument(
 
 export interface Config {
   file: string
-  bsScore: boolean
-  bsReplace: boolean
+  replaceBs: boolean
   theme: string
 }
 
 export default (): Config => {
   const {
     markdown_file,
-    bullshit_score,
     replace_bullshit,
     theme,
   } = parser.parseArgs()
 
   return {
     file: markdown_file,
-    bsScore: Boolean(bullshit_score),
-    bsReplace: Boolean(replace_bullshit),
+    replaceBs: Boolean(replace_bullshit),
     theme: theme || 'dark',
   }
 }

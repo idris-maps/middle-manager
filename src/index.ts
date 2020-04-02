@@ -2,13 +2,14 @@ import parseCmd, { Config } from './utils/parseCmd'
 import parseMd from './utils/parseMd'
 import read from './utils/read'
 import renderHTML from './render'
+import { replaceBullshit } from './bullshit'
 
 const config = parseCmd()
 
-const run = async (config: Config) => {
+const run = async ({ theme, replaceBs, file }: Config) => {
   try {
-    const md = await read(config.file)
-    const slides = parseMd(md)
+    const md = await read(file)
+    const slides = parseMd(replaceBs ? replaceBullshit(md) : md)
     const html = await renderHTML(slides, config.theme)
     console.log(html)
   } catch (e) {

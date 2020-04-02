@@ -2,9 +2,9 @@
 
 ---
 
-## Small text
+## Disrupt your processes
 
- Lorem ipsum dolor sit amet, *consectetur adipiscing elit*. Sed auctor velit eros, eu mattis lorem finibus nec. In tempor bibendum diam laoreet eleifend. **Vivamus volutpat luctus bibendum**. Maecenas pretium nibh nec est hendrerit pretium.
+This amazing presentation tool will help you increase your productivity and communicate with all stakeholders. It will make you become the forward-thinking thought-leader you always dreamt of being.
 
 ---
 

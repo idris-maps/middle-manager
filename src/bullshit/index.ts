@@ -7,6 +7,18 @@ const revealBullshit = (text: string) => {
   const last = text.length - 1
   const bullshit = `${c === c.toUpperCase() ? 'B' : 'b'}ullshit`
 
+  if (
+    (text.charAt(last - 3) !== 'o' || text.charAt(last - 3) !=='e')
+    && (text.substr(last - 2) === 'ors' || text.substr(last - 2) === 'ers')
+  ) {
+    return `${bullshit}ters`
+  }
+  if (
+    (text.charAt(last - 2) !== 'o' || text.charAt(last - 2) !=='e')
+    && (text.substr(last - 1) === 'or' || text.substr(last - 1) === 'er')
+  ) {
+    return `${bullshit}ter`
+  }
   if (text.substr(last - 2) === 'ing') {
     return `${bullshit}ting`
   }
@@ -15,9 +27,6 @@ const revealBullshit = (text: string) => {
   }
   if (text.charAt(last - 2) !== 'e' && text.substr(last - 1) === 'ed') {
     return `${bullshit}ted`
-  }
-  if (text.charAt(last - 2) !== ('o' || 'e') && text.substr(last - 1) === ('or' || 'er')) {
-    return `${bullshit}ter`
   }
   return bullshit
 }
@@ -43,4 +52,3 @@ export const countBullshit = (text: string) => {
     score: Math.round(bullshit / words * 1000),
   }
 }
-
