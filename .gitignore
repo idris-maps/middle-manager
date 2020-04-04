@@ -3,3 +3,4 @@ node_modules
 dist
 try_stuff
 assets/images
+.test.html
