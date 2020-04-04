@@ -44,7 +44,7 @@ They will be replaced by the literal word *bullshit*.
 
 ---
 
-![Replace bullshit demo](images/bullshit.png)
+![Replace bullshit demo](bullshit.png)
 
 We would love to pretend the *bullshit detector*™ is based on our proprietary AI
 
