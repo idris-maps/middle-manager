@@ -40,7 +40,7 @@ middle-manager -md my-presentation.md -o my-presentation.html -bs
 
 They will be replaced by the literal word *bullshit*.
 
-![Replace bullshit demo](demo/bullshit.png)
+![Replace bullshit demo](https://raw.githubusercontent.com/idris-maps/middle-manager/master/demo/bullshit.png)
 
 We would love to pretend the *bullshit detector*™ is based on a proprietary AI. But it did not pass said detector. It uses the, nonetheless excellent, [bullshit.js](https://mourner.github.io/bullshit.js/) under the hood.
 
