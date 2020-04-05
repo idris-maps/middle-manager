@@ -72,7 +72,7 @@ At the moment there are three themes:
 middle-manager -md my-presentation.md -o my-presentation.html -t light
 ```
 
-If you feel like creating a new theme, have a look at the [`src_style`](src_style) folder. PRs are welcome.
+If you feel like creating a new theme, have a look at the [`src_style`](https://github.com/idris-maps/middle-manager/tree/master/src_style) folder. PRs are welcome.
 
 ## Why `middle-manager`?
 
@@ -80,4 +80,4 @@ There are many presentation tools, how does `middle-manager` compare with the co
 
 Desktop tools such as PowerPoint are very powerful. But that is their curse. You will spend a lot of time fiddling with alignment and styling. Using just markdown lets you focus on your message.
 
-Tools such as [`impress`](https://impress.js.org), [`reval`](https://revealjs.com) and [`MDX deck`](https://github.com/jxnblk/mdx-deck) are much fancier but come with the javascript creep the modern internet has gotten us used to. `middle-manager`, being a command line tool, produces lightweight presentation decks with minimal overhead. The [demo deck](https://middle-manager.surge.sh/) weighs 10kb.
+Tools such as [`impress`](https://impress.js.org), [`reveal`](https://revealjs.com) and [`MDX deck`](https://github.com/jxnblk/mdx-deck) are much fancier but come with the javascript creep the modern internet has gotten us used to. `middle-manager`, being a command line tool, produces lightweight presentation decks with minimal overhead. The [demo deck](https://middle-manager.surge.sh/) weighs 10kb.
