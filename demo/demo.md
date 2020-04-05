@@ -16,20 +16,6 @@ With three dashes.
 
 ---
 
-## Usage
-
-```bash
-npx middle-manager -md my-presentation.md -o my-presentation.html 
-```
-
-or install the package globally:
-
-```bash
-npm install middle-manager -g
-```
-
----
-
 ## Cut the bullshit
 
 We help you be clear, concise and avoid unnecessary fluff. `middle-manager` always shows you a *bullshit score*™, ranking the amount of bullshit in your presentation between 0 and 1000.

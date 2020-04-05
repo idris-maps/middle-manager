@@ -17,7 +17,7 @@
     "scss": "npm run scss:dark && npm run scss:light && npm run scss:paper",
     "build": "tsc && sed -i '1i #!/usr/bin/env node' dist/index.js && chmod -x dist/index.js",
     "prepublish": "npm run build",
-    "demo": "npx ts-node src/index -md demo/demo.md -o demo/index.html && surge demo --domain middle-manager.surge.sh"
+    "demo": "./scripts/demo.sh"
   },
   "keywords": [],
   "author": "",
