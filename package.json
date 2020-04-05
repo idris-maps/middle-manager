@@ -1,6 +1,6 @@
 {
   "name": "middle-manager",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "main": "dist/index.js",
   "bin": {
     "middle-manager": "./dist/index.js"

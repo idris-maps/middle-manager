@@ -1,5 +1,7 @@
 > "When we understand that slide, we’ll have won the war." - Gen. Stanley A. McChrystal
+
 > "PowerPoint makes us stupid" - Gen. James N. Mattis
+
 > "It’s dangerous because it can create the illusion of understanding and the illusion of control. Some problems in the world are not bullet-izable." - Brig. Gen. H. R. McMaster
 
 [We Have Met the Enemy and He Is PowerPoint](https://www.nytimes.com/2010/04/27/world/27powerpoint.html)
