@@ -2,6 +2,8 @@
   "name": "middle-manager",
   "version": "1.0.6",
   "main": "dist/index.js",
+  "keywords": ["presentation", "deck", "markdown"],
+  "description": "The no bullshit presentation tool",
   "bin": {
     "middle-manager": "./dist/index.js"
   },
@@ -10,7 +12,7 @@
     "update-bullshit-terms": "curl https://raw.githubusercontent.com/mourner/bullshit.js/master/src/terms.js > src/bullshit/terms.ts",
     "update-prism-langs": "ts-node scripts/updatePrismLangs",
     "build:client": "rollup --config rollup.config.js",
-    "dev:client": "parcel client/index.html",
+    "dev:client": "parcel src_client/index.html",
     "scss:dark": "node-sass src_style/dark.scss -o assets --output-style compressed",
     "scss:light": "node-sass src_style/light.scss -o assets --output-style compressed",
     "scss:paper": "node-sass src_style/paper.scss -o assets --output-style compressed",
@@ -19,10 +21,12 @@
     "prepublish": "npm run build",
     "demo": "./scripts/demo.sh"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "description": "",
+  "author": "idris-maps",
+  "license": "GPL-3.0-or-later",
+  "repository": {
+    "type" : "git",
+    "url" : "https://github.com/idris-maps/middle-manager.git"
+  },
   "devDependencies": {
     "@types/argparse": "^1.0.38",
     "@types/marked": "^0.7.2",
