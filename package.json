@@ -2,7 +2,11 @@
   "name": "middle-manager",
   "version": "1.0.7",
   "main": "dist/index.js",
-  "keywords": ["presentation", "deck", "markdown"],
+  "keywords": [
+    "presentation",
+    "deck",
+    "markdown"
+  ],
   "description": "The no bullshit presentation tool",
   "bin": {
     "middle-manager": "./dist/index.js"
@@ -24,8 +28,8 @@
   "author": "idris-maps",
   "license": "GPL-3.0-or-later",
   "repository": {
-    "type" : "git",
-    "url" : "https://github.com/idris-maps/middle-manager.git"
+    "type": "git",
+    "url": "https://github.com/idris-maps/middle-manager.git"
   },
   "devDependencies": {
     "@types/argparse": "^1.0.38",

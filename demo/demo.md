@@ -8,7 +8,7 @@
 
 ### *What is markdown?*
 
-A simple markup language. Checkout this [cheatsheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet) and [the source of this presentation](https://raw.githubusercontent.com/idris-maps/middle-manager/master/demo.md).
+A simple markup language. Checkout this [cheatsheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet) and [the source of this presentation](https://raw.githubusercontent.com/idris-maps/middle-manager/master/demo/demo.md).
 
 ### *How are the slides separated?*
 
@@ -62,6 +62,12 @@ const onLoad = () => {
   window.addEventListener('resize', () => goToPage(getPage()))
 }
 ```
+
+---
+
+## You can use emojis 🎉 🦄
+
+But really, you should not.
 
 ---
 
