@@ -30,11 +30,13 @@ They will be replaced by the literal word *bullshit*.
 
 ---
 
-![Replace bullshit demo](bullshit.png)
+### Disrupt your processes
 
-We would love to pretend the *bullshit detector*™ is based on our proprietary AI
+This amazing presentation tool helps you increase your productivity, communicate with all stakeholders and become the forward-thinking thought-leader you always dreamt of being.
 
-...but it did not pass said detector. It uses the, nonetheless excellent, [bullshit.js](https://mourner.github.io/bullshit.js/)
+### Bullshit your bullshits
+
+This bullshitting presentation tool helps you increase your bullshit, bullshit with all bullshitters and become the bullshitting bullshitter you always dreamt of being.
 
 ---
 
@@ -77,10 +79,4 @@ const onLoad = () => {
 
 But really, you should not.
 
----
-
-## Disrupt your processes
-
-This amazing presentation tool helps you increase your productivity, communicate with all stakeholders and become the forward-thinking thought-leader you always dreamt of being.
-
-### [Try it now!](https://github.com/idris-maps/middle-manager)
+### [Try `middle-manager` now!](https://github.com/idris-maps/middle-manager)
