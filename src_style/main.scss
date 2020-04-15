@@ -104,6 +104,14 @@ table {
   border-collapse: collapse;
 }
 
+table.codeblock {
+  font-size: 0.8em;
+}
+
+table.codeblock-big {
+  font-size: 0.6em;
+}
+
 tbody tr:nth-child(odd) {
   background-color: $codeBgColor;
 }
